@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Hello Vue</title>
+  </head>
+  <style>
+    body {
+      background-color: #eee;
+      max-width: 960px;
+      margin: 20px auto;
+    }
+    p,
+    h3,
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      list-style-type: none;
+      background-color: #fff;
+      margin: 20px auto;
+      padding: 10px 20px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    li.fav {
+      background-color: #ff9ed2;
+      color: white;
+    }
+  </style>
+  <body>
+    <div id="app">
+      <a :href="url"> Paginote</a>
+      <div v-if="showBooks">
+        <ul>
+          <li v-for="book in filteredBooks  " :class="{fav: book.isFav}" @click="changeFav(book)">
+            <h2>{{book.title}} - {{book.author}}</h2>
+          </li>
+        </ul>
+      </div>
+      <div v-show="showBooks">Currently showing books</div>
+      <button @click="hideBooks">
+        <span v-if="showBooks"> Hide books </span>
+        <span v-else> show books </span>
+      </button>
+      <button @click="age++">Increase Age</button>
+      <button @click="age--">Decrease Age</button>
+      <div @click="changeTitle('patata')">Cambiador</div>
+
+      <!--
+        Diferentes tipos de enventos con el cursor
+        <br />
+        <div id="box" @mouseover="handleEvent">mouse over (enter)</div>
+        <div id="box" @mouseleave="handleEvent">mouse leave</div>
+        <div id="box" @dblclick="handleEvent">doble click</div>
+        <div id="box" @mousemove="handleMouseMove">{{x}} - {{y}}</div>
+      -->
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>

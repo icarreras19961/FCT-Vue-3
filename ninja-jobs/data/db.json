@@ -1,0 +1,8 @@
+{
+  "jobs": [
+    { "id": 1, "title": "Diseñador", "details": "Nose" },
+    { "id": 2, "title": "Desarrollador", "details": "Nose" },
+    { "id": 3, "title": "Tocapelotas", "details": "Nose" }
+  ],
+  "blogs": []
+}
